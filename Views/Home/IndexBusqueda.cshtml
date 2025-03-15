@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PeliculasWeb.Models.Pelicula>
+@{
+    ViewData["Title"] = "Resultado Búsqueda";
+}
+<!--Lista de Películas Encontradas-->
+<div class="row mt-3">
+    @if (Model != null && Model.Count() > 0)
+    {
+        @foreach (var pelicula in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="card h-100">
+                    @if (!string.IsNullOrEmpty(pelicula.RutaIMagen))
+                    {
+                        <img src="@pelicula.RutaIMagen" class="card-img-top img-fluid" />
+                    }
+                    else
+                    {
+                        <img src="~/imagenes/default-image.jpg" class="card-img-top img-fluid" /> <!-- Imagen por defecto si no hay imagen -->
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@pelicula.Nombre</h5>
+                        <p class="card-text">Duración: @pelicula.Duracion</p>
+                        <p class="card-text">Clasificación: @pelicula.Clasificacion</p>
+                        <p class="card-text">Fecha de creación: @pelicula.FechaCreacion?.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text">@pelicula.Descripcion</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        <p>No hay películas para mostrar</p>
+    }
+</div>

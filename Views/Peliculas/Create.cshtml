@@ -1,0 +1,87 @@
+﻿@model PeliculasWeb.Models.ViewModels.PeliculasVM
+@{
+    ViewData["Title"] = "Crear Nueva Película";
+}
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-8">
+            <h2 class="text-primary">
+                Crear Nueva Película
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="form-group row mb-3">
+                    <label asp-for="Pelicula.Nombre" class="col-4 col-form-label"> </label>
+                    <div class="col-8">
+                        <input asp-for="Pelicula.Nombre" class="form-control" placeholder="Ingresa el nombre de la película" />
+                        <span asp-validation-for="Pelicula.Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label asp-for="Pelicula.Descripcion" class="col-4 col-form-label"> </label>
+                    <div class="col-8">
+                        <input asp-for="Pelicula.Descripcion" class="form-control" placeholder="Ingresa la descripción de la película" />
+                        <span asp-validation-for="Pelicula.Descripcion" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label asp-for="Pelicula.Clasificacion" class="col-4 col-form-label"> </label>
+                    <div class="col-8">
+                        <select asp-for="Pelicula.Clasificacion" asp-items="Html.GetEnumSelectList<Pelicula.TipoClasificacion>()" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label asp-for="Pelicula.Duracion" class="col-4 col-form-label"> </label>
+                    <div class="col-8">
+                        <input asp-for="Pelicula.Duracion" class="form-control" placeholder="Ingresa la duración de la película" />
+                        <span asp-validation-for="Pelicula.Duracion" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- lista de categorías -->
+                <div class="form-group row mb-3">
+                    <label for="Categoria" class="col-4 col-form-label">Categoría</label>
+                    <div class="col-8">
+                        @Html.DropDownListFor(c => c.Pelicula.categoriaId, Model.ListaCategorias,
+                                 "-Selecciona una categoría-",
+                                 new { @class = "form-control" })
+                        <span asp-validation-for="Pelicula.categoriaId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!--Subida de Imagen-->
+                <div class="form-group mb-3 row">
+                    <label for="Imagen" class="col-md-4 col-form-label">Imagen</label>
+                    <div class="col-8">
+                        <input type="file" asp-for="Pelicula.Imagen" class="form-control" name="files" />
+                        <span asp-validation-for="Pelicula.Imagen" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-plus"></i> Crear Película
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <a asp-action="Index" class="btn btn-secondary w-100">
+                            <i class="fas fa-arrow-left"> Volver</i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

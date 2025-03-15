@@ -1,0 +1,8 @@
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\PeliculasWeb.exe
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\appsettings.json
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\PeliculasWeb.dll
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\PeliculasWeb.deps.json
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\PeliculasWeb.runtimeconfig.json
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\PeliculasWeb.pdb
+C:\Users\RAMIRO\Desktop\api_Curso\ApiPeliculas\PeliculasWeb\bin\Release\net8.0\publish\Newtonsoft.Json.dll
