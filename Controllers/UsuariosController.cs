@@ -25,7 +25,16 @@ namespace PeliculasWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTodosUsuarios()
         {
-            return Json(new { data = await _repoUsuario.GetTodoAsync(CT.RutaUsuariosApi) });
+            //return Json(new { data = await _repoUsuario.GetTodoAsync(CT.RutaUsuariosApi) });
+            var usuariosResponse = await _repoUsuario.GetTodoAsync(CT.RutaUsuariosApi);
+
+            // Verificar si está devolviendo datos
+            if (usuariosResponse == null)
+            {
+                return Json(new { data = new List<Usuario>() }); // Devolver lista vacía en lugar de null
+            }
+
+            return Json(new { data = usuariosResponse });
         }
     }
 }

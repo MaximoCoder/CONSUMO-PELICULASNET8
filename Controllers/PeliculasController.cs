@@ -28,7 +28,10 @@ namespace PeliculasWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTodasPeliculas()
         {
-            return Json(new { data = await _repoPelicula.GetPeliculasTodoAsync(CT.RutaPeliculasApi) });
+            var peliculasResponse = await _repoPelicula.GetPeliculasTodoAsync(CT.RutaPeliculasApi);
+
+            // Asegurarse de que DataTables reciba la estructura correcta
+            return Json(new { data = peliculasResponse.Items });
         }
         // Crear Pelicula vista
         [HttpGet]
